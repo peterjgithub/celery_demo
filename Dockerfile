@@ -1,9 +1,7 @@
-FROM python:3.11-slim-bookworm
+FROM python:3.11-alpine
 
-# System deps – upgrade first to pick up OS security patches
-RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+# System deps
+RUN apk add --no-cache curl
 
 WORKDIR /app
 
