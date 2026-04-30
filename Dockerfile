@@ -1,4 +1,4 @@
-FROM python:3.11-alpine
+FROM python:3.11-alpine3.21
 
 # Upgrade all packages to pick up security patches, then add runtime deps
 RUN apk upgrade --no-cache && apk add --no-cache curl
