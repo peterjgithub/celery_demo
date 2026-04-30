@@ -1,7 +1,7 @@
 FROM python:3.11-alpine
 
-# System deps
-RUN apk add --no-cache curl
+# Upgrade all packages to pick up security patches, then add runtime deps
+RUN apk upgrade --no-cache && apk add --no-cache curl
 
 WORKDIR /app
 
